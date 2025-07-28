@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "types": ["chai", "mocha", "node"],
+    "typeRoots": ["./node_modules/@types"],
+    "module": "commonjs",
+    "target": "es2022",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true
+  }
+}

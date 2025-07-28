@@ -1,0 +1,58 @@
+{
+  "name": "solana-program-starter",
+  "version": "0.1.0",
+  "license": "AGPL-3.0-or-later",
+  "scripts": {
+    "prepare": "husky install",
+    "fmt": "cargo +nightly fmt",
+    "lint": "cargo clippy -- -A warnings",
+    "lint:fix": "cargo clippy --fix --allow-dirty --allow-staged -- -A warnings",
+    "fmt-ts": "prettier '**/*.{js,json,ts,yml,yaml}' --write --plugin=prettier-plugin-organize-imports",
+    "lint-ts": "eslint 'tests/**/*.ts'",
+    "lint-ts:fix": "eslint 'tests/**/*.ts' --fix",
+    "build": "anchor build",
+    "run-tests": "RUST_LOG=error anchor run test",
+    "test": "pnpm run build && pnpm run run-tests",
+    "lint-staged": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,json,ts,yaml,yml}": [
+      "prettier '**/*.{js,json,ts,yml,yaml}' --write --plugin=prettier-plugin-organize-imports",
+      "eslint --fix"
+    ]
+  },
+  "dependencies": {
+    "@coral-xyz/anchor": "^0.31.1",
+    "@solana/spl-token": "^0.4.6"
+  },
+  "devDependencies": {
+    "@types/bn.js": "^5.1.0",
+    "@types/bs58": "^4.0.1",
+    "@types/chai": "^4.3.0",
+    "@types/mocha": "^9.0.0",
+    "@types/node": "^24.0.10",
+    "@typescript-eslint/eslint-plugin": "^6.6.0",
+    "@typescript-eslint/parser": "^6.6.0",
+    "anchor-litesvm": "0.1.1",
+    "bn-chai": "^1.0.1",
+    "bs58": "^4.0.1",
+    "chai": "^4.3.4",
+    "dayjs": "^1.11.11",
+    "dayjs-plugin-utc": "^0.1.2",
+    "dotenv": "^17.0.1",
+    "eslint": "^9.19.0",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-import": "^2.28.1",
+    "eslint-plugin-mocha": "^11.1.0",
+    "eslint-plugin-prettier": "^5.5.3",
+    "eslint-plugin-unicorn": "^59.0.1",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
+    "litesvm": "0.1.0",
+    "mocha": "^10.1.0",
+    "prettier": "^3.0.3",
+    "prettier-plugin-organize-imports": "^3.2.3",
+    "ts-mocha": "^10.0.0",
+    "typescript": "^4.3.5"
+  }
+}

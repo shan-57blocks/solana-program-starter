@@ -26,6 +26,7 @@
     "@solana/spl-token": "^0.4.6"
   },
   "devDependencies": {
+    "@eslint/js": "^9.32.0",
     "@types/bn.js": "^5.1.0",
     "@types/bs58": "^4.0.1",
     "@types/chai": "^4.3.0",
@@ -53,6 +54,7 @@
     "prettier": "^3.0.3",
     "prettier-plugin-organize-imports": "^3.2.3",
     "ts-mocha": "^10.0.0",
-    "typescript": "^4.3.5"
+    "typescript": "^4.3.5",
+    "typescript-eslint": "^8.38.0"
   }
 }

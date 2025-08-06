@@ -1,6 +1,6 @@
 use anchor_lang::prelude::*;
 
-declare_id!("MeqFmqmKwRW7tBX6ta4Zyw9ZFNvGW7g5W7X8EVygfLG");
+declare_id!("ESCRythK359iqXTANRrZ1h6VnVuk2R713ioAuweXGvaB");
 
 #[program]
 pub mod review {
@@ -16,13 +16,13 @@ pub mod review {
         new_review.restaurant = restaurant;
         new_review.review = review;
         new_review.rating = rating;
-        msg!(
-            "Restaurant review for {} - {} stars",
-            new_review.restaurant,
-            new_review.rating
-        );
-        msg!("Review: {}", new_review.review);
 
+        emit!(PostReviewEvent {
+            restaurant: new_review.restaurant.to_string(),
+            review: new_review.review.to_string(),
+            rating: new_review.rating,
+            reviewer: ctx.accounts.signer.key()
+        });
         Ok(())
     }
 }
@@ -49,4 +49,12 @@ pub struct Review {
     pub restaurant: String,
     pub review: String,
     pub rating: u8,
+}
+
+#[event]
+pub struct PostReviewEvent {
+    pub restaurant: String,
+    pub review: String,
+    pub rating: u8,
+    pub reviewer: Pubkey,
 }

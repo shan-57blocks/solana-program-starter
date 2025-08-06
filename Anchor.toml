@@ -8,10 +8,10 @@ resolution = true
 skip-lint = false
 
 [programs.localnet]
-review = "ESCRythK359iqXTANRrZ1h6VnVuk2R713ioAuweXGvaB"
+review = "MeqFmqmKwRW7tBX6ta4Zyw9ZFNvGW7g5W7X8EVygfLG"
 
 [programs.devnet]
-review = "ESCRythK359iqXTANRrZ1h6VnVuk2R713ioAuweXGvaB"
+review = "MeqFmqmKwRW7tBX6ta4Zyw9ZFNvGW7g5W7X8EVygfLG"
 
 [registry]
 url = "https://api.apr.dev"

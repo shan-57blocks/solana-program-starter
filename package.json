@@ -11,8 +11,7 @@
     "lint-ts": "eslint 'tests/**/*.ts'",
     "lint-ts:fix": "eslint 'tests/**/*.ts' --fix",
     "build": "anchor build",
-    "run-tests": "RUST_LOG=error anchor run test",
-    "test": "pnpm run build && pnpm run run-tests",
+    "test": "ts-mocha -p ./tsconfig.json tests/**/*.test.ts",
     "lint-staged": "lint-staged"
   },
   "lint-staged": {
@@ -23,7 +22,8 @@
   },
   "dependencies": {
     "@coral-xyz/anchor": "^0.31.1",
-    "@solana/spl-token": "^0.4.6"
+    "@solana/spl-token": "^0.4.6",
+    "@solana/web3.js": "^1.98.4"
   },
   "devDependencies": {
     "@eslint/js": "^9.32.0",
